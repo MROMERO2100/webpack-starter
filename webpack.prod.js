@@ -76,7 +76,12 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].[contentHash].css',
             ignoreOrder: false
-        })
+        }),
+        new CopyPlugin({       
+            patterns: [
+                { from: 'src/assets', to: 'assets/' }
+            ]
+        }),    
     ]
 
 }
